@@ -21,3 +21,5 @@ The `JAVA PROJECTS` view allows you to manage your dependencies. More details ca
 Member:
 Bottle1985: Pham Xuan Binh
 tuanthanh14: Nguyen Tuan Thanh
+-hduc1812: Nguyen Hoang Duc
+tuanhodinh: Ho Dinh Tuan
