@@ -90,8 +90,8 @@ public class App {
     }
      // Bottle end click 
      // Bottle test paragraph content
-     setUp();
-     headingText();
+     //setUp();
+     //headingText();
        
         //close Fire fox
         //driver.close();
