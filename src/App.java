@@ -12,7 +12,7 @@ public class App {
         System.setProperty("webdriver.chrome.driver","lib/chromedriver.exe");
         webDriver = new ChromeDriver();
         }
-    public static boolean validateTitle(String expectedTitle){
+        public static boolean validateTitle(String expectedTitle){
 		String actualTitle = webDriver.getTitle();
 		if(actualTitle.contentEquals(expectedTitle)){
 			return true;
@@ -95,6 +95,7 @@ public class App {
        
         //close Fire fox
         //driver.close();
+        DomainTest.name();
        
     }
     
