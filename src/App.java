@@ -94,7 +94,7 @@ public class App {
      //headingText();
        
         //close Fire fox
-        //driver.close();
+        driver.close();
         DomainTest.name();
        
     }
