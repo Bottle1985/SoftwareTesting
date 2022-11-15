@@ -96,8 +96,9 @@ public class App {
         // close Fire fox
         driver.close();
         DomainTest.name();
-        CheckTBD.CheckTitleTBD();
-        DaotaoDTuan.CheckDaotaoTBD();
+        //CheckTBD.CheckTitleTBD();
+        //DaotaoDTuan.CheckDaotaoTBD();
+        nghiencuuXHong.nghiencuuTBD();
     }
 
 }
