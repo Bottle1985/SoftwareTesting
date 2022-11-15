@@ -97,6 +97,7 @@ public class App {
         driver.close();
         DomainTest.name();
         CheckTBD.CheckTitleTBD();
+        DaotaoDTuan.CheckDaotaoTBD();
     }
 
 }
