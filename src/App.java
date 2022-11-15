@@ -94,11 +94,11 @@ public class App {
         // headingText();
 
         // close Fire fox
-        driver.close();
+        driver.quit();
         DomainTest.name();
         //CheckTBD.CheckTitleTBD();
         //DaotaoDTuan.CheckDaotaoTBD();
-        nghiencuuXHong.nghiencuuTBD();
+        //nghiencuuXHong.nghiencuuTBD();
     }
 
 }
