@@ -99,6 +99,7 @@ public class App {
         //CheckTBD.CheckTitleTBD();
         //DaotaoDTuan.CheckDaotaoTBD();
         //nghiencuuXHong.nghiencuuTBD();
+        TienNghiencuu.TuyensinhTBD();
     }
 
 }
