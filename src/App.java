@@ -100,6 +100,7 @@ public class App {
         //DaotaoDTuan.CheckDaotaoTBD();
         //nghiencuuXHong.nghiencuuTBD();
         TienNghiencuu.TuyensinhTBD();
+        TuanSinhVien.SinhVienTBD();
     }
 
 }
