@@ -21,16 +21,13 @@ public class DomainTest {
 	public static void headingText() {
 		webDriver.get("https://tbd.edu.vn/tra-cuu-ho-so/");
 		webDriver.manage().window().maximize();
-		String expectedHeading = "Tra cứu hồ sơ - Đại học Thái Bình Dương";
-
-		// Storing the text of the heading in a string
-		String heading = webDriver.getTitle();
-		if (expectedHeading.equalsIgnoreCase(heading))
-			System.out.println("The expected heading is same as actual heading --- " + heading);
+		
+		if (validateTitle("Tra cứu hồ sơ - Đại học Thái Bình Dương"))
+			System.out.println("The expected heading is same as actual heading --- Pass");
 		else
-			System.out.println("The expected heading doesn't match the actual heading --- " + heading);
+			System.out.println("The expected heading doesn't match the actual heading --- Fail");
 	}
-
+	
 	public static void name() {
 		System.out.println("Good luck");
 		setUp();
