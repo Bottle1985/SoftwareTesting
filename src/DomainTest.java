@@ -1,4 +1,6 @@
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class DomainTest {
@@ -19,7 +21,8 @@ public class DomainTest {
 	}
 
 	public static void headingText() {
-		webDriver.get("https://tbd.edu.vn/tra-cuu-ho-so/");
+		String baseUrl = "https://tbd.edu.vn/tra-cuu-ho-so/";	
+		webDriver.get(baseUrl);
 		webDriver.manage().window().maximize();
 		
 		if (validateTitle("Tra cứu hồ sơ - Đại học Thái Bình Dương"))
@@ -27,10 +30,34 @@ public class DomainTest {
 		else
 			System.out.println("The expected heading doesn't match the actual heading --- Fail");
 	}
-	
+	public static void searchProfile()
+	{
+		String baseUrl = "https://tbd.edu.vn/tra-cuu-ho-so/";					
+        webDriver.get(baseUrl);	
+		// Get the WebElement corresponding to the search field	
+        WebElement search = webDriver.findElement(By.name("keyTBD"));							
+		
+        search.sendKeys("225282478");					
+        System.out.println("Text Field Set");					
+         
+        // Deleting values in the text box		
+        //search.clear();			
+        //System.out.println("Text Field Cleared");					
+
+        // Find the submit button		
+        WebElement searchButton = webDriver.findElement(By.xpath("/html/body/div[2]/div[1]/div[2]/div[2]/form/button"));							
+		// Using click method to submit form		
+        searchButton.click();			
+        System.out.println("Login Done with Click");					
+        		
+        
+				
+        //System.out.println("Login Done with Submit");		
+	}
 	public static void name() {
 		System.out.println("Good luck");
 		setUp();
 		headingText();
+		searchProfile();
 	}
 }
