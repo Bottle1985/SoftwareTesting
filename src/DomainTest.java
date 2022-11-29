@@ -1,14 +1,24 @@
+import java.time.Duration;
+
+
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 
 public class DomainTest {
 	private static WebDriver webDriver;
 
 	public static void setUp() {
-		System.setProperty("webdriver.chrome.driver", "lib/chromedriver.exe");
-		webDriver = new ChromeDriver();
+		// System.setProperty("webdriver.chrome.driver", "lib/chromedriver.exe");
+		// webDriver = new ChromeDriver();
+		// Implementation of SetProperty Method
+		System.setProperty("webdriver.edge.driver","lib/msedgedriver.exe");
+		// Creating new Object driver Of Webdriver
+		webDriver = new EdgeDriver();
 	}
 
 	public static boolean validateTitle(String expectedTitle) {
@@ -21,7 +31,8 @@ public class DomainTest {
 	}
 
 	public static void headingText() {
-		String baseUrl = "https://tbd.edu.vn/tra-cuu-ho-so/";	
+		//String baseUrl = "https://tbd.edu.vn/tra-cuu-ho-so/";
+		String baseUrl = "http://daotao.tbd.edu.vn/";	
 		webDriver.get(baseUrl);
 		webDriver.manage().window().maximize();
 		
@@ -32,12 +43,13 @@ public class DomainTest {
 	}
 	public static void searchProfile()
 	{
-		String baseUrl = "https://tbd.edu.vn/tra-cuu-ho-so/";					
+		//String baseUrl = "https://tbd.edu.vn/tra-cuu-ho-so/";
+		String baseUrl = "http://daotao.tbd.edu.vn/";					
+        					
         webDriver.get(baseUrl);	
 		// Get the WebElement corresponding to the search field	
-        WebElement search = webDriver.findElement(By.name("keyTBD"));							
-		
-        search.sendKeys("225282478");					
+        WebElement userName = webDriver.findElement(By.name("LoginControl1$txtusername"));							
+		userName.sendKeys("225282478");					
         System.out.println("Text Field Set");					
          
         // Deleting values in the text box		
@@ -45,11 +57,17 @@ public class DomainTest {
         //System.out.println("Text Field Cleared");					
 
         // Find the submit button		
-        WebElement searchButton = webDriver.findElement(By.xpath("/html/body/div[2]/div[1]/div[2]/div[2]/form/button"));							
+        WebElement loginButton = webDriver.findElement(By.name("LoginControl1$btnDangNhap"));							
 		// Using click method to submit form		
-        searchButton.click();			
-        System.out.println("Login Done with Click");					
-        		
+        loginButton.click();			
+        System.out.println("Login Done with Click");
+		//WebElement alertError = webDriver.findElement(By.name("LoginControl1_lblThong_bao"));					
+        WebElement alertError = new WebDriverWait(webDriver, Duration.ofSeconds(3))
+          .until(webDriver -> webDriver.findElement(By.id("LoginControl1_lblThong_bao")));
+		  System.out.println(alertError.getText());
+		if(alertError.getText().contentEquals("Tên đăng nhập và mật khẩu không hợp lệ, bạn nhập lại !"))
+		   System.out.println("Test case Login 2 pass");
+		//<span id="LoginControl1_lblThong_bao" class="alert alert-danger col-sm-12">Tên đăng nhập và mật khẩu không hợp lệ, bạn nhập lại !</span>		
         
 				
         //System.out.println("Login Done with Submit");		
