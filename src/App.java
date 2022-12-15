@@ -1,11 +1,12 @@
 public class App {
     public static void main(String[] args) throws Exception {
         System.out.println("Hello, World!");
-        DomainTest.name();
+        //DomainTest.name();
         //CheckTBD.CheckTitleTBD();
         //DaotaoDTuan.CheckDaotaoTBD();
         //nghiencuuXHong.nghiencuuTBD();
         //TienNghiencuu.TuyensinhTBD();
         //TuanSinhVien.SinhVienTBD();
+        TuanThanhTinSuKien.TinSukienTBD();
     }
 }
